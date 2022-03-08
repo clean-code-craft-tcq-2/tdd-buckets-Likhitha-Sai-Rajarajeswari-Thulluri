@@ -1,0 +1,4 @@
+name: Limit complexity
+jobs:
+      - name: Limit complexity
+      run: $HOME/.local/bin/lizard --exclude "./test/*" --CCN 3
