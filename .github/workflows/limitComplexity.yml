@@ -9,5 +9,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    - name: Install lizard
+      run: pip install lizard
+
     - name: Limit complexity
       run: $HOME/.local/bin/lizard --exclude "./test/*" --CCN 3
