@@ -1,4 +1,13 @@
 name: Limit complexity
+
+on: [push, pull_request]
+
 jobs:
-      - name: Limit complexity
+  complexcheck:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Limit complexity
       run: $HOME/.local/bin/lizard --exclude "./test/*" --CCN 3
