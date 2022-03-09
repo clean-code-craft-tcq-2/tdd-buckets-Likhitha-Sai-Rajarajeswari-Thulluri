@@ -6,5 +6,5 @@
 TEST_CASE("detect the current charging range and output the number of readings") {
   std::vector<int> chargingRange = {4, 5};
   std::map<string, int> rangeFrequency = {{"4-5", 2}};
-  REQUIRE(inferRange(chargingRange) == rangeFrequency);
+  REQUIRE(inferCurrentChargingRange(chargingRange) == rangeFrequency);
 }
