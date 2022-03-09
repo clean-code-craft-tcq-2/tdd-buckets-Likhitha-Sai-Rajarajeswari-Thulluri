@@ -3,6 +3,6 @@
 #include<string>
 #include<vector>
 
-std::map<string, int> inferCurrentChargingRange(std::vector<int> vecCurrentSamples) {
+std::map<std::string, int> inferCurrentChargingRange(std::vector<int> vecCurrentSamples) {
   
 }
