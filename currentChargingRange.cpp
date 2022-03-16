@@ -1,13 +1,18 @@
 #include "currentChargingRange.h"
 #include <algorithm>
 
+bool validateRange(int size, int currentPosition, int currentValue, int prevValue)
+{
+	return ((currentPosiiton == size) || (currentValue - prevValue != 1));
+}
+
 std::map<std::string, int> populateCurrentRange(std::vector<int> vecCurrentSamples) {
 	int length = 1;
 	std::map<std::string, int> mapCurrentRange;
 	std::sort(vecCurrentSamples.begin(), vecCurrentSamples.end());
 	for(int i = 1; i <= vecCurrentSamples.size(); i++)
 	{
-		if (i == vecCurrentSamples.size() || vecCurrentSamples[i] - vecCurrentSamples[i - 1] != 1)
+		if (validateRange(vecCurrentSamples.size(), i, vecCurrentSamples[i], vecCurrentSamples[i-1]))
 		{
 			std::string temp = std::to_string(vecCurrentSamples[i - length]) +
 				    "-" + std::to_string(vecCurrentSamples[i - 1]);
