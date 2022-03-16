@@ -9,15 +9,13 @@ std::map<std::string, int> populateCurrentRange(std::vector<int> vecCurrentSampl
 	{
 		if (i == vecCurrentSamples.size() || vecCurrentSamples[i] - vecCurrentSamples[i - 1] != 1)
 		{
-		    std::string temp = std::to_string(vecCurrentSamples[i - length]) +
+			std::string temp = std::to_string(vecCurrentSamples[i - length]) +
 				    "-" + std::to_string(vecCurrentSamples[i - 1]);
-		    mapCurrentRange[temp] = length;
-		    length = 1;
+			mapCurrentRange[temp] = length;
+			length = 1;
+			continue;
 		}
-		else
-		{
-		    length++;
-		}
+		length++;
 	}
 	return mapCurrentRange;
 }
