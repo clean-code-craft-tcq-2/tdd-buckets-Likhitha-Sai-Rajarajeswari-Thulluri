@@ -16,8 +16,8 @@ TEST_CASE("detect sorted multiple current charging range and output the number o
 }
 
 TEST_CASE("detect unsorted single current charging range and output the number of readings") {
-  std::vector<int> chargingRange = {5, 4};
-  std::map<std::string, int> rangeFrequency = {{"4-5", 2}};
+  std::vector<int> chargingRange = {3, 5, 4};
+  std::map<std::string, int> rangeFrequency = {{"3-5", 3}};
   REQUIRE(inferCurrentChargingRange(chargingRange) == rangeFrequency);
 }
 
