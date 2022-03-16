@@ -3,7 +3,7 @@
 
 bool validateRange(int size, int currentPosition, int currentValue, int prevValue)
 {
-	return ((currentPosition == size) || (currentValue - prevValue != 1));
+	return ((currentPosition == size) || ((currentValue - prevValue != 1) && (currentValue != prevValue)));
 }
 
 std::map<std::string, int> populateCurrentRange(std::vector<int> vecCurrentSamples) {
