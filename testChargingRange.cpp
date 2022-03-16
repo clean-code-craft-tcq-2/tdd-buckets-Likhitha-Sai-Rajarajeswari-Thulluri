@@ -26,3 +26,15 @@ TEST_CASE("detect unsorted multiple current charging range and output the number
   std::map<std::string, int> rangeFrequency = {{"4-5", 2}, {"7-9", 3}};
   REQUIRE(inferCurrentChargingRange(chargingRange) == rangeFrequency);
 }
+
+TEST_CASE("detect unsorted repetitive single current charging range and output the number of readings") {
+  std::vector<int> chargingRange = {4, 5, 4};
+  std::map<std::string, int> rangeFrequency = {{"4-5", 3}};
+  REQUIRE(inferCurrentChargingRange(chargingRange) == rangeFrequency);
+}
+
+TEST_CASE("detect unsorted repetitive  multiple current charging range and output the number of readings") {
+  std::vector<int> chargingRange = {4, 5, 8, 9, 5, 8, 7};
+  std::map<std::string, int> rangeFrequency = {{"4-5", 3}, {"7-9", 4}};
+  REQUIRE(inferCurrentChargingRange(chargingRange) == rangeFrequency);
+}
